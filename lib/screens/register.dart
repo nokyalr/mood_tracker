@@ -23,7 +23,6 @@ class RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 40),
-                // Ikon back yang berada di dalam scroll
                 Align(
                   alignment: Alignment.topLeft,
                   child: GestureDetector(
@@ -53,7 +52,6 @@ class RegisterScreenState extends State<RegisterScreen> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      const SizedBox(height: 30),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
