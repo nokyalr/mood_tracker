@@ -178,14 +178,14 @@ class LoginScreenState extends State<LoginScreen> {
                     style: const TextStyle(
                         color: Color(0xFFA6A6A6),
                         fontFamily: 'ADLaMDisplay',
-                        fontSize: 20),
+                        fontSize: 16),
                     children: [
                       TextSpan(
                         text: 'Sign up',
                         style: const TextStyle(
                             color: Color(0xFFE68C52),
                             fontFamily: 'ADLaMDisplay',
-                            fontSize: 20),
+                            fontSize: 16),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.pushReplacement(
