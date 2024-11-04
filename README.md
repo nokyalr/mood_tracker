@@ -3,4 +3,4 @@ sebuah tampungan program project bahasa pemrograman semester 3 teknik komputer P
 # Mockup Progress
 
 ![image](https://github.com/user-attachments/assets/6b120b94-478c-407e-b191-26213004b6e5)
-![image](https://github.com/user-attachments/assets/641e8d79-2831-4666-8c17-fbf02ca92c45)
+![image](https://github.com/user-attachments/assets/607affb0-4c95-47d4-a555-9cb9904b564a)
