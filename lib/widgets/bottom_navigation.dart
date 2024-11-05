@@ -22,6 +22,7 @@ class BottomNavigation extends StatelessWidget {
         ),
       ),
       child: BottomNavigationBar(
+        backgroundColor: Colors.white,
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: false,
@@ -51,13 +52,12 @@ class BottomNavigation extends StatelessWidget {
                   width: 1.0,
                 )
               : null,
-          borderRadius:
-              BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         padding: const EdgeInsets.all(5.0),
         child: Image.asset(
           assetPath,
-          height: 48,
+          height: 32,
         ),
       ),
       label: label,

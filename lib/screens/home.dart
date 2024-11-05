@@ -45,18 +45,20 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 70.0,
         shape: const Border(
           bottom: BorderSide(
             color: Color(0xFFE68C52),
-            width: 3.0,
+            width: 2.0,
           ),
         ),
         title: Row(
           children: [
             Image.asset(
-              'assets/images/people_16086025.png',
+              'assets/images/people1.png',
               height: 52,
             ),
             const SizedBox(width: 10),

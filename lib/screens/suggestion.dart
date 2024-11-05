@@ -40,6 +40,7 @@ class SuggestionScreenState extends State<SuggestionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: const Center(
         child: SingleChildScrollView(
           child: Padding(

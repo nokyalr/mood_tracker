@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mood_tracker/screens/login.dart';
+import 'package:mood_tracker/widgets/text_field.dart';
+import 'package:mood_tracker/widgets/confirm_button.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -13,10 +15,13 @@ class RegisterScreenState extends State<RegisterScreen> {
   bool _isPasswordVisible = false;
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -55,6 +60,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+                          const SizedBox(height: 80),
                           SizedBox(
                             height: 60,
                             child: Image.asset('assets/images/smile.png'),
@@ -68,7 +74,6 @@ class RegisterScreenState extends State<RegisterScreen> {
                           Text(
                             'Sign up',
                             style: TextStyle(
-                              fontFamily: 'ADLaMDisplay',
                               fontSize: 40,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFFE68C52),
@@ -82,7 +87,6 @@ class RegisterScreenState extends State<RegisterScreen> {
                           Text(
                             'Please register continue',
                             style: TextStyle(
-                              fontFamily: 'ADLaMDisplay',
                               fontSize: 20,
                               color: Color(0xFFA6A6A6),
                             ),
@@ -91,139 +95,49 @@ class RegisterScreenState extends State<RegisterScreen> {
                       ),
                       const SizedBox(height: 30),
                       // Input Username
-                      TextField(
+                      CustomTextField(
                         controller: _usernameController,
-                        decoration: InputDecoration(
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Image.asset(
-                              'assets/images/user.png',
-                              width: 24,
-                              color: const Color(0xFFA6A6A6),
-                            ),
-                          ),
-                          hintText: 'username',
-                          hintStyle: const TextStyle(
-                              color: Color(0xFFA6A6A6),
-                              fontFamily: 'ADLaMDisplay',
-                              fontSize: 20),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFFE68C52)),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFFE68C52)),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
+                        hintText: 'username',
+                        prefixIconPath: 'assets/images/user.png',
+                        showVisibilityIcon: false,
                       ),
                       const SizedBox(height: 20),
                       // Input Password
-                      TextField(
+                      CustomTextField(
                         controller: _passwordController,
-                        obscureText: !_isPasswordVisible,
-                        decoration: InputDecoration(
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Image.asset(
-                              'assets/images/padlock.png',
-                              width: 24,
-                              color: const Color(0xFFA6A6A6),
-                            ),
-                          ),
-                          hintText: 'password',
-                          hintStyle: const TextStyle(
-                              color: Color(0xFFA6A6A6),
-                              fontFamily: 'ADLaMDisplay',
-                              fontSize: 20),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFFE68C52)),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFFE68C52)),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _isPasswordVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                              color: const Color(0xFFA6A6A6),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _isPasswordVisible = !_isPasswordVisible;
-                              });
-                            },
-                          ),
-                        ),
+                        hintText: 'password',
+                        prefixIconPath: 'assets/images/padlock.png',
+                        obscureText: true,
+                        isPasswordVisible: _isPasswordVisible,
+                        onSuffixIconPressed: () {
+                          setState(() {
+                            _isPasswordVisible = !_isPasswordVisible;
+                          });
+                        },
                       ),
                       const SizedBox(height: 20),
-                      TextField(
+                      CustomTextField(
+                        controller: _confirmPasswordController,
+                        hintText: 'confirm password',
+                        prefixIconPath: 'assets/images/padlock.png',
                         obscureText: true,
-                        decoration: InputDecoration(
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Image.asset(
-                              'assets/images/padlock.png',
-                              width: 24,
-                              color: const Color(0xFFA6A6A6),
-                            ),
-                          ),
-                          hintText: 'confirm password',
-                          hintStyle: const TextStyle(
-                              color: Color(0xFFA6A6A6),
-                              fontFamily: 'ADLaMDisplay',
-                              fontSize: 20),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFFE68C52)),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: Color(0xFFE68C52)),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
+                        showVisibilityIcon: false,
                       ),
+
                       const SizedBox(height: 50),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          SizedBox(
-                            width: 135,
-                            height: 60,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
+                          ConfirmButton(
+                            text: 'confirm',
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginScreen(),
                                 ),
-                                backgroundColor: const Color(0xFFE68C52),
-                              ),
-                              child: const Text(
-                                'confirm',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: 'ADLaMDisplay',
-                                    fontSize: 22),
-                              ),
-                            ),
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -232,16 +146,12 @@ class RegisterScreenState extends State<RegisterScreen> {
                         text: TextSpan(
                           text: 'Already have an account? ',
                           style: const TextStyle(
-                              color: Color(0xFFA6A6A6),
-                              fontFamily: 'ADLaMDisplay',
-                              fontSize: 16),
+                              color: Color(0xFFA6A6A6), fontSize: 16),
                           children: [
                             TextSpan(
                               text: 'Sign in',
                               style: const TextStyle(
-                                  color: Color(0xFFE68C52),
-                                  fontFamily: 'ADLaMDisplay',
-                                  fontSize: 16),
+                                  color: Color(0xFFE68C52), fontSize: 16),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.pushReplacement(

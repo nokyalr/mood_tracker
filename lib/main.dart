@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Login App',
       theme: ThemeData(
+        fontFamily: 'ADLaMDisplay',
         primarySwatch: Colors.orange,
       ),
       home: const LoginScreen(),

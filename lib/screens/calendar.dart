@@ -40,6 +40,7 @@ class CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: const Center(
         child: SingleChildScrollView(
           child: Padding(
