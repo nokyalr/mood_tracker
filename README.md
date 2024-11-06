@@ -1,15 +1,15 @@
-sebuah tampungan program project bahasa pemrograman semester 3 teknik komputer PENS
+a dump project "Bahasa Permrograman" 3rd semester computer engineering EEPIS
 
-# Cara Menggunakan Proyek Ini
+# How to Use This Project
 
-1. Klik tombol hijau bertuliskan **Code** di atas, lalu pilih **Download ZIP**.
-2. Ekstrak file ZIP yang telah diunduh dan pindahkan folder hasil ekstraksi ke dalam folder proyek Flutter Anda.
-3. Ubah nama folder dari `mood_tracker-main` menjadi `mood_tracker`.
-4. Buka Visual Studio Code (VSCode) dan pilih opsi **Open Folder**, lalu arahkan ke folder yang baru saja dipindahkan.
-5. Buka terminal di VSCode, lalu jalankan perintah berikut untuk mengunduh dependencies yang diperlukan:
+1. Click the green **Code** button above and select **Download ZIP**.
+2. Extract the downloaded ZIP file and move the extracted folder into your Flutter project folder.
+3. Rename the folder from `mood_tracker-main` to `mood_tracker`.
+4. Open Visual Studio Code (VSCode) and choose the **Open Folder** option, then navigate to the folder you just moved.
+5. Open the terminal in VSCode and run the following command to download the required dependencies:
    ```bash
    flutter pub get
-6. Terakhir, jalankan atau build proyek
+6. Finally, run or build the project.
 
 # Mockup Progress
 
