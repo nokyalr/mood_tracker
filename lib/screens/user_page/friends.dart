@@ -122,7 +122,7 @@ class FriendsScreenState extends State<FriendsScreen> {
         titleText: 'Friends',
         targetPage: const UserScreen(),
         useBorder: false,
-        imageHeight: 32,
+        imageHeight: 28,
         backgroundColor:
             showOverlay ? Colors.black.withOpacity(0.3) : Colors.white,
         textColor: showOverlay

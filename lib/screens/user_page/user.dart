@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:mood_tracker/screens/user_page/friends.dart';
-import 'package:mood_tracker/screens/login.dart';
+import '../user_page/friends.dart';
+import '../../screens/login.dart';
 import '../home_page/home.dart';
 import '../calendar_page/calendar.dart';
 import '../suggestion_page/suggestion.dart';
+import '../user_page/edit_profile.dart';
 import '../../widgets/bottom_navigation.dart';
 
 class UserScreen extends StatefulWidget {
@@ -47,10 +48,10 @@ class UserScreenState extends State<UserScreen> {
       appBar: AppBar(
         toolbarHeight: 150.0,
         backgroundColor: Colors.white,
-        shape: const Border(
+        shape: Border(
           bottom: BorderSide(
-            color: Color(0xFFE68C52),
-            width: 3.0,
+            color: Color(0xFFE68C52).withOpacity(0.5),
+            width: 2.0,
           ),
         ),
         title: Row(
@@ -60,31 +61,52 @@ class UserScreenState extends State<UserScreen> {
               height: 110,
             ),
             const SizedBox(width: 20),
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Annie',
                   style: TextStyle(
                     fontSize: 24,
                     color: Color(0xFFE68C52),
                   ),
                 ),
-                Text(
+                const Text(
                   '@annie_',
                   style: TextStyle(
                     fontSize: 24,
                     color: Color(0xFFE68C52),
                   ),
                 ),
-                SizedBox(height: 8),
-                Text(
-                  'edit profile',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Color(0xFF000000),
-                  ),
-                ),
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        text: 'Edit Profile ',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black.withOpacity(0.8),
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const EditProfileScreen()),
+                            );
+                          },
+                      ),
+                    ),
+                    const SizedBox(width: 4),
+                    Image.asset(
+                      'assets/images/edit.png',
+                      height: 14,
+                    ),
+                  ],
+                )
               ],
             ),
           ],
