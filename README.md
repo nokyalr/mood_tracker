@@ -9,7 +9,7 @@ sebuah tampungan program project bahasa pemrograman semester 3 teknik komputer P
 5. Buka terminal di VSCode, lalu jalankan perintah berikut untuk mengunduh dependencies yang diperlukan:
    ```bash
    flutter pub get
-6. Terakhir, jalankan atau build
+6. Terakhir, jalankan atau build proyek
 
 # Mockup Progress
 
