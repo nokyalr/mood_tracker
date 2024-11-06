@@ -13,10 +13,11 @@ a dump project "Bahasa Permrograman" 3rd semester computer engineering EEPIS
 
 # Mockup Progress
 
-![image](https://github.com/user-attachments/assets/6b120b94-478c-407e-b191-26213004b6e5)
-![image](https://github.com/user-attachments/assets/607affb0-4c95-47d4-a555-9cb9904b564a)
+![image](https://github.com/user-attachments/assets/baea79d4-2dc6-4efd-9b05-ada53ab03ab9)
+![image](https://github.com/user-attachments/assets/19a26013-f270-44c3-8cc5-67af5c920304)
 
-![image](https://github.com/user-attachments/assets/c66744ed-88a2-4c46-bbe5-daa272abc9f1)
-![image](https://github.com/user-attachments/assets/32af795f-af6b-4bb2-9327-b8b1d310a384)
+![image](https://github.com/user-attachments/assets/f1490030-bf2f-4322-b495-610cfd3acb98)
+![image](https://github.com/user-attachments/assets/56fad3b1-aacb-46c2-a338-eceac4c41bb0)
 
-![image](https://github.com/user-attachments/assets/bdb62ca4-81b7-42c2-a57f-ded8c94cda81)
+![image](https://github.com/user-attachments/assets/1b96ef0d-312a-439b-81b3-4d6c3e2cf614)
+![image](https://github.com/user-attachments/assets/e588984d-ce65-43a9-b242-e8266a415f02)
