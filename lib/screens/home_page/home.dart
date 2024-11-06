@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'calendar.dart';
-import 'suggestion.dart';
-import 'user.dart';
-import '../widgets/bottom_navigation.dart';
+import '../calendar_page/calendar.dart';
+import '../suggestion_page/suggestion.dart';
+import '../user_page/user.dart';
+import '../../widgets/bottom_navigation.dart';
+import '../../widgets/app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,31 +47,14 @@ class HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar: CustomAppBar(
+        imagePath: 'assets/images/people1.png',
+        titleText: 'Welcome back, Annie!',
+        targetPage: const UserScreen(),
+        useBorder: true,
+        imageHeight: 48,
         backgroundColor: Colors.white,
-        toolbarHeight: 70.0,
-        shape: const Border(
-          bottom: BorderSide(
-            color: Color(0xFFE68C52),
-            width: 2.0,
-          ),
-        ),
-        title: Row(
-          children: [
-            Image.asset(
-              'assets/images/people1.png',
-              height: 52,
-            ),
-            const SizedBox(width: 10),
-            const Text(
-              'Welcome back, Annie!',
-              style: TextStyle(
-                fontSize: 24,
-                color: Color(0xFFE68C52),
-              ),
-            ),
-          ],
-        ),
+        textColor: Color(0xFFE68C52),
       ),
       body: const Center(
         child: SingleChildScrollView(

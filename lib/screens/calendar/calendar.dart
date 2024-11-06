@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
-import 'suggestion.dart';
-import 'user.dart';
-import '../widgets/bottom_navigation.dart';
+import '../home_page/home.dart';
+import '../suggestion_page/suggestion.dart';
+import '../user_page/user.dart';
+import '../../widgets/bottom_navigation.dart';
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});

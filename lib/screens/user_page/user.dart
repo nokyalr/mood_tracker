@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:mood_tracker/screens/friends.dart';
+import 'package:mood_tracker/screens/user_page/friends.dart';
 import 'package:mood_tracker/screens/login.dart';
-import 'home.dart';
-import 'calendar.dart';
-import 'suggestion.dart';
-import '../widgets/bottom_navigation.dart';
+import '../home_page/home.dart';
+import '../calendar_page/calendar.dart';
+import '../suggestion_page/suggestion.dart';
+import '../../widgets/bottom_navigation.dart';
 
 class UserScreen extends StatefulWidget {
   const UserScreen({super.key});

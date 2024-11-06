@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
-import 'calendar.dart';
-import 'user.dart';
-import '../widgets/bottom_navigation.dart';
+import '../home_page/home.dart';
+import '../suggestion_page/suggestion.dart';
+import '../user_page/user.dart';
+import '../../widgets/bottom_navigation.dart';
 
-class SuggestionScreen extends StatefulWidget {
-  const SuggestionScreen({super.key});
+class CalendarScreen extends StatefulWidget {
+  const CalendarScreen({super.key});
 
   @override
-  SuggestionScreenState createState() => SuggestionScreenState();
+  CalendarScreenState createState() => CalendarScreenState();
 }
 
-class SuggestionScreenState extends State<SuggestionScreen> {
-  int _selectedIndex = 2;
+class CalendarScreenState extends State<CalendarScreen> {
+  int _selectedIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -24,10 +24,10 @@ class SuggestionScreenState extends State<SuggestionScreen> {
         context,
         MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
-    } else if (index == 1) {
+    } else if (index == 2) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const CalendarScreen()),
+        MaterialPageRoute(builder: (context) => const SuggestionScreen()),
       );
     } else if (index == 3) {
       Navigator.pushReplacement(

@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:mood_tracker/screens/home.dart';
+import 'package:mood_tracker/screens/home_page/home.dart';
 import 'package:mood_tracker/screens/register.dart';
 import 'package:mood_tracker/widgets/text_field.dart';
 import 'package:mood_tracker/widgets/confirm_button.dart';

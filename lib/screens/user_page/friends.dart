@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mood_tracker/screens/user.dart';
+import 'package:mood_tracker/screens/user_page/user.dart';
 import 'package:mood_tracker/widgets/text_field.dart';
+import 'package:mood_tracker/widgets/app_bar.dart';
 
 class FriendsScreen extends StatefulWidget {
   const FriendsScreen({super.key});
@@ -116,48 +117,20 @@ class FriendsScreenState extends State<FriendsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        toolbarHeight: 50.0,
+      appBar: CustomAppBar(
+        imagePath: 'assets/images/back.png',
+        titleText: 'Friends',
+        targetPage: const UserScreen(),
+        useBorder: false,
+        imageHeight: 32,
         backgroundColor:
             showOverlay ? Colors.black.withOpacity(0.3) : Colors.white,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const UserScreen()),
-                      );
-                    },
-                    child: SizedBox(
-                      height: 60,
-                      child: Image.asset(
-                        'assets/images/back.png',
-                        color: const Color(0xFFE68C52),
-                        width: 42,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                const Text(
-                  'Friends',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Color(0xFFE68C52),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-          ],
-        ),
+        textColor: showOverlay
+            ? Color(0xFFE68C52).withOpacity(0.7)
+            : Color(0xFFE68C52),
+        imageColor: showOverlay
+            ? Color(0xFFE68C52).withOpacity(0.7)
+            : Color(0xFFE68C52),
       ),
       body: Stack(
         children: [
@@ -169,7 +142,6 @@ class FriendsScreenState extends State<FriendsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 10),
                       CustomTextField(
                         controller: _friendController,
                         hintText: 'search name',
@@ -178,7 +150,6 @@ class FriendsScreenState extends State<FriendsScreen> {
                         onChanged: (value) {
                           setState(() {
                             searchQuery = value;
-                            // Update displayed friends based on main search
                             displayedFriends = friends
                                 .where((friend) => friend['nickname']!
                                     .toLowerCase()

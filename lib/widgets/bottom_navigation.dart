@@ -13,10 +13,10 @@ class BottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         border: Border(
           top: BorderSide(
-            color: Color(0xFFE68C52),
+            color: const Color(0xFFE68C52).withOpacity(0.3),
             width: 1.0,
           ),
         ),
