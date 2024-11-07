@@ -1,6 +1,6 @@
 a dump project "Bahasa Permrograman" 3rd semester computer engineering EEPIS
 
-# How to Use This Project
+# How to Use Project
 
 1. Click the green **Code** button above and select **Download ZIP**.
 2. Extract the downloaded ZIP file and move the extracted folder into your Flutter project folder.
