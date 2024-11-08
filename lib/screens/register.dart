@@ -60,7 +60,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const SizedBox(height: 80),
+                          const SizedBox(height: 60),
                           SizedBox(
                             height: 60,
                             child: Image.asset('assets/images/smile.png'),
