@@ -102,7 +102,7 @@ class LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 150),
+                const SizedBox(height: 160),
                 RichText(
                   text: TextSpan(
                     text: 'Don’t have an account? ',
