@@ -21,3 +21,6 @@ a dump project "Bahasa Permrograman" 3rd semester computer engineering EEPIS
 
 ![image](https://github.com/user-attachments/assets/1b96ef0d-312a-439b-81b3-4d6c3e2cf614)
 ![image](https://github.com/user-attachments/assets/e588984d-ce65-43a9-b242-e8266a415f02)
+
+![image](https://github.com/user-attachments/assets/879a2776-6907-4247-b919-c18e23da1d4a)
+![image](https://github.com/user-attachments/assets/a9e63c7e-f06f-437c-b9aa-cd149f2cc0a6)
