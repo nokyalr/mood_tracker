@@ -26,17 +26,36 @@ class UserScreenState extends State<UserScreen> {
     if (index == 0) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => const HomeScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 1) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const CalendarScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const CalendarScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 2) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const SuggestionScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const SuggestionScreen(),
+          transitionDuration: Duration.zero,
+        ),
+      );
+    } else if (index == 3) {
+      Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => const UserScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     }
   }
@@ -46,6 +65,7 @@ class UserScreenState extends State<UserScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 150.0,
         backgroundColor: Colors.white,
         shape: Border(
@@ -93,9 +113,12 @@ class UserScreenState extends State<UserScreen> {
                           ..onTap = () {
                             Navigator.pushReplacement(
                               context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const EditProfileScreen()),
+                              PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation1, animation2) =>
+                                        const EditProfileScreen(),
+                                transitionDuration: Duration.zero,
+                              ),
                             );
                           },
                       ),
@@ -137,8 +160,11 @@ class UserScreenState extends State<UserScreen> {
                         ..onTap = () {
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => const FriendsScreen()),
+                            PageRouteBuilder(
+                              pageBuilder: (context, animation1, animation2) =>
+                                  const FriendsScreen(),
+                              transitionDuration: Duration.zero,
+                            ),
                           );
                         },
                     ),
@@ -165,8 +191,11 @@ class UserScreenState extends State<UserScreen> {
                         ..onTap = () {
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => const LoginScreen()),
+                            PageRouteBuilder(
+                              pageBuilder: (context, animation1, animation2) =>
+                                  const LoginScreen(),
+                              transitionDuration: Duration.zero,
+                            ),
                           );
                         },
                     ),
