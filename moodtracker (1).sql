@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2024 at 05:36 PM
+-- Generation Time: Nov 14, 2024 at 11:31 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `moodtracker`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_friend`
+--
+
+CREATE TABLE `add_friend` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `requester_username` varchar(50) NOT NULL,
+  `receiver_username` varchar(50) NOT NULL,
+  `status` enum('pending','accepted','rejected') DEFAULT 'pending',
+  `request_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `response_date` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -82,13 +97,30 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nickname` varchar(50) DEFAULT NULL,
-  `profile_image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `nickname`, `created_at`) VALUES
+(3, 'Noki', '$2y$10$hMMFD8gk4H1.3lrTAGG42.7RlXDH.HiHYsjd5EAaeOgkGYS4n7d5a', NULL, '2024-11-13 10:44:05'),
+(4, 'Rehan', '$2y$10$.aQlsqruws3kE5R60z8SqOKcmm6Gucbp9WGsxcEvyc9YOBw5UaDG6', NULL, '2024-11-13 10:45:02'),
+(5, 'Thariq', '$2y$10$wG3Yylcgk0im5y.tybBaZ.hyAabLJ6s.NcyG7yrNTTWsM/YbjBp4W', NULL, '2024-11-13 11:15:34'),
+(6, 'Dandi', '$2y$10$TQ5Lkhx7xMlCrRkqWU6TJuIEicqbw0eEJqEK2MqEIENPWa0ycnTcO', NULL, '2024-11-14 02:54:08');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `add_friend`
+--
+ALTER TABLE `add_friend`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `requester_username` (`requester_username`),
+  ADD KEY `receiver_username` (`receiver_username`);
 
 --
 -- Indexes for table `comments`
@@ -124,6 +156,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `add_friend`
+--
+ALTER TABLE `add_friend`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
@@ -145,11 +183,18 @@ ALTER TABLE `moods`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `add_friend`
+--
+ALTER TABLE `add_friend`
+  ADD CONSTRAINT `add_friend_ibfk_1` FOREIGN KEY (`requester_username`) REFERENCES `users` (`username`) ON DELETE CASCADE,
+  ADD CONSTRAINT `add_friend_ibfk_2` FOREIGN KEY (`receiver_username`) REFERENCES `users` (`username`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `comments`
