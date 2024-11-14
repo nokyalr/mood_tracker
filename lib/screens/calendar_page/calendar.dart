@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mood_tracker/widgets/app_bar.dart';
 import '../home_page/home.dart';
 import '../suggestion_page/suggestion.dart';
 import '../user_page/user.dart';
@@ -24,17 +25,36 @@ class CalendarScreenState extends State<CalendarScreen> {
     if (index == 0) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => const HomeScreen(),
+          transitionDuration: Duration.zero,
+        ),
+      );
+    } else if (index == 1) {
+      Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const CalendarScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 2) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const SuggestionScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const SuggestionScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 3) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const UserScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => const UserScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     }
   }
@@ -110,43 +130,49 @@ class CalendarScreenState extends State<CalendarScreen> {
 
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: CustomAppBar(
+        imagePath: 'assets/images/back.png',
+        titleText: 'Calendar',
+        targetPage: const UserScreen(),
+        useBorder: false,
+        textColor: Color(0xFFE68C52),
+        useImage: false,
+      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
                     onPressed: () {
-                      _changeMonth(-1); // Menekan tombol back, bulan sebelumnya
+                      _changeMonth(-1);
                     },
                     icon: const Icon(Icons.arrow_back_ios),
-                    iconSize: 30,
+                    iconSize: 26,
                     color: Color(0xFFE68C52),
                   ),
                   Text(
                     '$monthName $_currentYear',
                     style: const TextStyle(
                       fontSize: 24,
-                      fontWeight: FontWeight.bold,
                       color: Color(0xFFE68C52),
                     ),
                   ),
                   IconButton(
                     onPressed: () {
-                      _changeMonth(
-                          1); // Menekan tombol forward, bulan berikutnya
+                      _changeMonth(1);
                     },
                     icon: const Icon(Icons.arrow_forward_ios),
-                    iconSize: 30,
+                    iconSize: 26,
                     color: Color(0xFFE68C52),
                   ),
                 ],
               ),
+              const SizedBox(height: 20),
               GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),

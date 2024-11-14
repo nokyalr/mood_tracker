@@ -76,17 +76,36 @@ class SuggestionScreenState extends State<SuggestionScreen> {
     if (index == 0) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => const HomeScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 1) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const CalendarScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const CalendarScreen(),
+          transitionDuration: Duration.zero,
+        ),
+      );
+    } else if (index == 2) {
+      Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const SuggestionScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 3) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const UserScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => const UserScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     }
   }
@@ -100,9 +119,8 @@ class SuggestionScreenState extends State<SuggestionScreen> {
         titleText: 'Suggestion',
         targetPage: const UserScreen(),
         useBorder: false,
-        imageHeight: 28,
         textColor: Color(0xFFE68C52),
-        imageColor: Color(0xFFE68C52),
+        useImage: false,
       ),
       body: SingleChildScrollView(
         child: Padding(

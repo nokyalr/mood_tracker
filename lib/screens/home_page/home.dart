@@ -82,23 +82,36 @@ class HomeScreenState extends State<HomeScreen> {
     if (index == 0) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => const HomeScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 1) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const CalendarScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const CalendarScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 2) {
-      Navigator.pushAndRemoveUntil(
+      Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const SuggestionScreen()),
-        (Route<dynamic> route) => false,
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const SuggestionScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     } else if (index == 3) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const UserScreen()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => const UserScreen(),
+          transitionDuration: Duration.zero,
+        ),
       );
     }
   }
